@@ -19,8 +19,8 @@ Here I used a 2 layered Convolution Neural Network (CNN) for training and classi
 
 ### Requirements
 You need to install tensorflow and keras to run this program which you can do by using pip.
-'''pip install keras
-   pip install tensorflow'''
+''' pip install keras
+''' pip install tensorflow
 
 ### References
 - [Program Reference](https://www.analyticsvidhya.com/blog/2019/01/build-image-classification-model-10-minutes/)
