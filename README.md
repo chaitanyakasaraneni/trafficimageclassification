@@ -28,8 +28,17 @@ img = image.load_img('traffic/traffic/train/'+train['id'][i], target_size = (28,
 img = image.img_to_array(img) ##image to array conversion
 ```
 2 layered Convolution Neural Network (CNN) for training and classifying the images.
-
-
+```
+model = Sequential()
+model.add(Conv2D(32, kernel_size=(3, 3),activation='relu',input_shape=(28,28,1)))
+model.add(Conv2D(64, (3, 3), activation='relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Dropout(0.25))
+model.add(Flatten())
+model.add(Dense(128, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(15, activation='softmax'))
+```
 ### References
 - [Program Reference](https://www.analyticsvidhya.com/blog/2019/01/build-image-classification-model-10-minutes/)
 - [Adam Optimizer Algorithm](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/)
