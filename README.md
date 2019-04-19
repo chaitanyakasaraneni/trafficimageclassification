@@ -15,14 +15,21 @@ The dataset file contains two dataset directories: traffic, and traffic-small. I
 test sets contain the same number of images. The image ID for the ith image corresponds to the label on the ith line of the train.labels file found in the main dataset directory. The traffic-small dataset contains a test.labels file, but the traffic dataset does not.
 Our task is to predict those labels for the images in the test set and create a .txt or .ddat file containing those labels.
 
-Here I used a 2 layered Convolution Neural Network (CNN) for training and classifying the images.
-
 ### Requirements
 You need to install [tensorflow](https://anaconda.org/conda-forge/tensorflow) and [keras](https://anaconda.org/conda-forge/keras) to run this program which you can do by using pip.
 ```
 pip install keras
 pip install tensorflow
 ```
+### My Implementation
+Here I used the color gradient features (grayscale) and tensorflow's inbuilt image to array conversion for feature extraction. 
+```
+img = image.load_img('traffic/traffic/train/'+train['id'][i], target_size = (28,28,1), color_mode = "grayscale") ##feature selection
+img = image.img_to_array(img) ##image to array conversion
+```
+2 layered Convolution Neural Network (CNN) for training and classifying the images.
+
+
 ### References
 - [Program Reference](https://www.analyticsvidhya.com/blog/2019/01/build-image-classification-model-10-minutes/)
 - [Adam Optimizer Algorithm](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/)
