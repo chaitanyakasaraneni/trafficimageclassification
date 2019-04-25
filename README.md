@@ -27,7 +27,7 @@ Here I used the color gradient features (grayscale) and tensorflow's inbuilt ima
 img = image.load_img('traffic/traffic/train/'+train['id'][i], target_size = (28,28,1), color_mode = "grayscale") ##feature selection
 img = image.img_to_array(img) ##image to array conversion
 ```
-2 layered Convolution Neural Network (CNN) for training and classifying the images.
+Defining 2 layered Convolution Neural Network (CNN) for training and classifying the images.
 ```
 model = Sequential()
 model.add(Conv2D(32, kernel_size=(3, 3),activation='relu',input_shape=(28,28,1)))
