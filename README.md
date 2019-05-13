@@ -27,7 +27,11 @@ Here I used the color gradient features (grayscale) and tensorflow's inbuilt ima
 img = image.load_img('traffic/traffic/train/'+train['id'][i], target_size = (28,28,1), color_mode = "grayscale") ##feature selection
 img = image.img_to_array(img) ##image to array conversion
 ```
-Defining 2 layered Convolution Neural Network (CNN) for training and classifying the images.
+Then, split the data into training and testiing to 80% and 20% respectively using:
+```
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42, test_size=0.2)
+```
+After that, define 2 layered Convolution Neural Network (CNN) for training and classifying the images.
 ```
 model = Sequential()
 model.add(Conv2D(32, kernel_size=(3, 3),activation='relu',input_shape=(28,28,1)))
