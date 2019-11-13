@@ -24,7 +24,8 @@ pip install tensorflow
 ### My Implementation
 Here I used the color gradient features (grayscale) and tensorflow's inbuilt image to array conversion for feature extraction. 
 ```
-img = image.load_img('traffic/traffic/train/'+train['id'][i], target_size = (28,28,1), color_mode = "grayscale") ##feature selection
+img = image.load_img('traffic/traffic/train/'+train['id'][i],
+                    target_size = (28,28,1), color_mode = "grayscale") ##feature selection
 img = image.img_to_array(img) ##image to array conversion
 ```
 Then, split the data into training and testiing to 80% and 20% respectively using:
